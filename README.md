@@ -10,7 +10,7 @@ This project provides a modern QuickLook extension for macOS to preview FreeCAD 
 
 When browsing your FreeCAD projects in Finder, you will see a live preview of the model's thumbnail, just like this:
 
-![Example FreeCAD Thumbnail Preview](Resources/Example.png)
+<img src="Resources/Example.png" alt="Example FreeCAD Thumbnail Preview" width="320" />
 
 ---
 
@@ -26,7 +26,7 @@ After building and installing the app, confirm that the QuickLook extension is e
    qlmanage -r
    ```
 
-![QuickLook Extensions List](Resources/QuickLook%20Extensions%20List.png)
+<img src="Resources/QuickLook%20Extensions%20List.png" alt="QuickLook Extensions List" width="400" />
 
 ---
 
@@ -48,7 +48,7 @@ When you select a `.FCStd` file in Finder, this extension:
 - For best results, configure FreeCAD to save a 256x256 or ideally a 512x512 thumbnail when saving your projects.
 - In FreeCAD, go to **Edit > Preferences > General > Document** and set the thumbnail size.
 
-![FreeCAD Thumbnail Settings](Resources/Thumbnail%20Settings.png)
+<img src="Resources/Thumbnail%20Settings.png" alt="FreeCAD Thumbnail Settings" width="400" />
 
 ---
 
