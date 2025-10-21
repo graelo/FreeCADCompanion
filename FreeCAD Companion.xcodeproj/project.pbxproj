@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		009E7F842DF73382006F00F0 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 009E7F832DF73382006F00F0 /* ZIPFoundation */; };
 		00DD5A0A2DF5B6EA0093C6C5 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DD5A092DF5B6EA0093C6C5 /* Quartz.framework */; };
-		00DD5A172DF5B6EA0093C6C5 /* FreeCAD Thumbnail Preview Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 00DD5A072DF5B6EA0093C6C5 /* FreeCAD Thumbnail Preview Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		00DD5A172DF5B6EA0093C6C5 /* FreeCAD Companion Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 00DD5A072DF5B6EA0093C6C5 /* FreeCAD Companion Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				00DD5A172DF5B6EA0093C6C5 /* FreeCAD Thumbnail Preview Extension.appex in Embed Foundation Extensions */,
+				00DD5A172DF5B6EA0093C6C5 /* FreeCAD Companion Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,18 +37,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00DD59F42DF5B4AE0093C6C5 /* FreeCAD Thumbnail Preview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FreeCAD Thumbnail Preview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00DD5A072DF5B6EA0093C6C5 /* FreeCAD Thumbnail Preview Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FreeCAD Thumbnail Preview Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00DD59F42DF5B4AE0093C6C5 /* FreeCAD Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FreeCAD Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00DD5A072DF5B6EA0093C6C5 /* FreeCAD Companion Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FreeCAD Companion Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DD5A092DF5B6EA0093C6C5 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		00DD5A182DF5B6EA0093C6C5 /* Exceptions for "FreeCADThumnailPreviewExtension" folder in "FreeCAD Thumbnail Preview Extension" target */ = {
+		00DD5A182DF5B6EA0093C6C5 /* Exceptions for "QuickLookPreviewExtension" folder in "FreeCAD Companion Extension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 00DD5A062DF5B6E90093C6C5 /* FreeCAD Thumbnail Preview Extension */;
+			target = 00DD5A062DF5B6E90093C6C5 /* FreeCAD Companion Extension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -58,12 +58,12 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		00DD5A0B2DF5B6EA0093C6C5 /* FreeCADThumnailPreviewExtension */ = {
+		00DD5A0B2DF5B6EA0093C6C5 /* QuickLookPreviewExtension */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				00DD5A182DF5B6EA0093C6C5 /* Exceptions for "FreeCADThumnailPreviewExtension" folder in "FreeCAD Thumbnail Preview Extension" target */,
+				00DD5A182DF5B6EA0093C6C5 /* Exceptions for "QuickLookPreviewExtension" folder in "FreeCAD Companion Extension" target */,
 			);
-			path = FreeCADThumnailPreviewExtension;
+			path = QuickLookPreviewExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				00DD59F62DF5B4AE0093C6C5 /* App */,
-				00DD5A0B2DF5B6EA0093C6C5 /* FreeCADThumnailPreviewExtension */,
+				00DD5A0B2DF5B6EA0093C6C5 /* QuickLookPreviewExtension */,
 				00DD5A082DF5B6EA0093C6C5 /* Frameworks */,
 				00DD59F52DF5B4AE0093C6C5 /* Products */,
 			);
@@ -101,8 +101,8 @@
 		00DD59F52DF5B4AE0093C6C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00DD59F42DF5B4AE0093C6C5 /* FreeCAD Thumbnail Preview.app */,
-				00DD5A072DF5B6EA0093C6C5 /* FreeCAD Thumbnail Preview Extension.appex */,
+				00DD59F42DF5B4AE0093C6C5 /* FreeCAD Companion.app */,
+				00DD5A072DF5B6EA0093C6C5 /* FreeCAD Companion Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,9 +118,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00DD59F32DF5B4AE0093C6C5 /* FreeCAD Thumbnail Preview */ = {
+		00DD59F32DF5B4AE0093C6C5 /* FreeCAD Companion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00DD5A002DF5B4AF0093C6C5 /* Build configuration list for PBXNativeTarget "FreeCAD Thumbnail Preview" */;
+			buildConfigurationList = 00DD5A002DF5B4AF0093C6C5 /* Build configuration list for PBXNativeTarget "FreeCAD Companion" */;
 			buildPhases = (
 				00DD59F02DF5B4AE0093C6C5 /* Sources */,
 				00DD59F12DF5B4AE0093C6C5 /* Frameworks */,
@@ -135,16 +135,16 @@
 			fileSystemSynchronizedGroups = (
 				00DD59F62DF5B4AE0093C6C5 /* App */,
 			);
-			name = "FreeCAD Thumbnail Preview";
+			name = "FreeCAD Companion";
 			packageProductDependencies = (
 			);
 			productName = FreeCADThumbnailPreview;
-			productReference = 00DD59F42DF5B4AE0093C6C5 /* FreeCAD Thumbnail Preview.app */;
+			productReference = 00DD59F42DF5B4AE0093C6C5 /* FreeCAD Companion.app */;
 			productType = "com.apple.product-type.application";
 		};
-		00DD5A062DF5B6E90093C6C5 /* FreeCAD Thumbnail Preview Extension */ = {
+		00DD5A062DF5B6E90093C6C5 /* FreeCAD Companion Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00DD5A192DF5B6EA0093C6C5 /* Build configuration list for PBXNativeTarget "FreeCAD Thumbnail Preview Extension" */;
+			buildConfigurationList = 00DD5A192DF5B6EA0093C6C5 /* Build configuration list for PBXNativeTarget "FreeCAD Companion Extension" */;
 			buildPhases = (
 				00DD5A032DF5B6E90093C6C5 /* Sources */,
 				00DD5A042DF5B6E90093C6C5 /* Frameworks */,
@@ -155,14 +155,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				00DD5A0B2DF5B6EA0093C6C5 /* FreeCADThumnailPreviewExtension */,
+				00DD5A0B2DF5B6EA0093C6C5 /* QuickLookPreviewExtension */,
 			);
-			name = "FreeCAD Thumbnail Preview Extension";
+			name = "FreeCAD Companion Extension";
 			packageProductDependencies = (
 				009E7F832DF73382006F00F0 /* ZIPFoundation */,
 			);
 			productName = Extension;
-			productReference = 00DD5A072DF5B6EA0093C6C5 /* FreeCAD Thumbnail Preview Extension.appex */;
+			productReference = 00DD5A072DF5B6EA0093C6C5 /* FreeCAD Companion Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 00DD59EF2DF5B4AE0093C6C5 /* Build configuration list for PBXProject "FreeCAD Thumbnail Preview" */;
+			buildConfigurationList = 00DD59EF2DF5B4AE0093C6C5 /* Build configuration list for PBXProject "FreeCAD Companion" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,8 +200,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00DD59F32DF5B4AE0093C6C5 /* FreeCAD Thumbnail Preview */,
-				00DD5A062DF5B6E90093C6C5 /* FreeCAD Thumbnail Preview Extension */,
+				00DD59F32DF5B4AE0093C6C5 /* FreeCAD Companion */,
+				00DD5A062DF5B6E90093C6C5 /* FreeCAD Companion Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -243,7 +243,7 @@
 /* Begin PBXTargetDependency section */
 		00DD5A162DF5B6EA0093C6C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 00DD5A062DF5B6E90093C6C5 /* FreeCAD Thumbnail Preview Extension */;
+			target = 00DD5A062DF5B6E90093C6C5 /* FreeCAD Companion Extension */;
 			targetProxy = 00DD5A152DF5B6EA0093C6C5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -373,7 +373,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = App/FreeCADThumbnailPreview.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -381,7 +382,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "FreeCAD Thumbnail Preview";
+				INFOPLIST_KEY_CFBundleDisplayName = "FreeCAD Extensions";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,8 +390,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.graelo.FreeCADThumbnailPreview;
+				PRODUCT_BUNDLE_IDENTIFIER = org.freecad.FreeCADCompanion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -403,7 +405,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = App/FreeCADThumbnailPreview.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -411,7 +414,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "FreeCAD Thumbnail Preview";
+				INFOPLIST_KEY_CFBundleDisplayName = "FreeCAD Extensions";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -419,8 +422,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.graelo.FreeCADThumbnailPreview;
+				PRODUCT_BUNDLE_IDENTIFIER = org.freecad.FreeCADCompanion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -430,14 +434,14 @@
 		00DD5A1A2DF5B6EA0093C6C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FreeCADThumnailPreviewExtension/Extension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = QuickLookPreviewExtension/Extension.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FreeCADThumnailPreviewExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_FILE = QuickLookPreviewExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuickLookPreviewExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,7 +449,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.graelo.FreeCADThumbnailPreview.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.freecad.FreeCADCompanion.QuickLookPreview.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -456,14 +460,14 @@
 		00DD5A1B2DF5B6EA0093C6C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = FreeCADThumnailPreviewExtension/Extension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = QuickLookPreviewExtension/Extension.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FreeCADThumnailPreviewExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_FILE = QuickLookPreviewExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuickLookPreviewExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -471,7 +475,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.graelo.FreeCADThumbnailPreview.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.freecad.FreeCADCompanion.QuickLookPreview.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -482,7 +486,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00DD59EF2DF5B4AE0093C6C5 /* Build configuration list for PBXProject "FreeCAD Thumbnail Preview" */ = {
+		00DD59EF2DF5B4AE0093C6C5 /* Build configuration list for PBXProject "FreeCAD Companion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00DD59FE2DF5B4AF0093C6C5 /* Debug */,
@@ -491,7 +495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00DD5A002DF5B4AF0093C6C5 /* Build configuration list for PBXNativeTarget "FreeCAD Thumbnail Preview" */ = {
+		00DD5A002DF5B4AF0093C6C5 /* Build configuration list for PBXNativeTarget "FreeCAD Companion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00DD5A012DF5B4AF0093C6C5 /* Debug */,
@@ -500,7 +504,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00DD5A192DF5B6EA0093C6C5 /* Build configuration list for PBXNativeTarget "FreeCAD Thumbnail Preview Extension" */ = {
+		00DD5A192DF5B6EA0093C6C5 /* Build configuration list for PBXNativeTarget "FreeCAD Companion Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00DD5A1A2DF5B6EA0093C6C5 /* Debug */,
