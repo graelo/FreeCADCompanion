@@ -64,6 +64,27 @@
 			);
 			target = 004BB3282EA7652300278BFB /* Thumbnail Extension */;
 		};
+		0098B5EA2EA81C200091A701 /* Exceptions for "Shared" folder in "Preview Extension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ThumbnailExtractor.swift,
+			);
+			target = 00DD5A062DF5B6E90093C6C5 /* Preview Extension */;
+		};
+		0098B5EB2EA81C200091A701 /* Exceptions for "Shared" folder in "Thumbnail Extension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ThumbnailExtractor.swift,
+			);
+			target = 004BB3282EA7652300278BFB /* Thumbnail Extension */;
+		};
+		0098B5EC2EA81C9F0091A701 /* Exceptions for "Shared" folder in "FreeCAD Companion" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ThumbnailExtractor.swift,
+			);
+			target = 00DD59F32DF5B4AE0093C6C5 /* FreeCAD Companion */;
+		};
 		00DD5A182DF5B6EA0093C6C5 /* Exceptions for "QuickLookPreviewExtension" folder in "Preview Extension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -80,6 +101,16 @@
 				004BB3362EA7652300278BFB /* Exceptions for "QuickLookThumbnailExtension" folder in "Thumbnail Extension" target */,
 			);
 			path = QuickLookThumbnailExtension;
+			sourceTree = "<group>";
+		};
+		0098B5E42EA81BD30091A701 /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0098B5EC2EA81C9F0091A701 /* Exceptions for "Shared" folder in "FreeCAD Companion" target */,
+				0098B5EA2EA81C200091A701 /* Exceptions for "Shared" folder in "Preview Extension" target */,
+				0098B5EB2EA81C200091A701 /* Exceptions for "Shared" folder in "Thumbnail Extension" target */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		00DD59F62DF5B4AE0093C6C5 /* App */ = {
@@ -131,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				00DD59F62DF5B4AE0093C6C5 /* App */,
+				0098B5E42EA81BD30091A701 /* Shared */,
 				00DD5A0B2DF5B6EA0093C6C5 /* QuickLookPreviewExtension */,
 				004BB32D2EA7652300278BFB /* QuickLookThumbnailExtension */,
 				00DD5A082DF5B6EA0093C6C5 /* Frameworks */,
@@ -199,6 +231,7 @@
 				004BB3322EA7652300278BFB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				0098B5E42EA81BD30091A701 /* Shared */,
 				00DD59F62DF5B4AE0093C6C5 /* App */,
 			);
 			name = "FreeCAD Companion";

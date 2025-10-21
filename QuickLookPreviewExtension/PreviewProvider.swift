@@ -12,75 +12,10 @@ private let logger = Logger(
 
 class PreviewProvider: QLPreviewProvider, QLPreviewingController {
 
-    func extractThumbnail(from zipURL: URL) -> CGImage? {
-        logger.debug(
-            "Attempting to extract thumbnail from: \(zipURL.path, privacy: .public)"
-        )
-
-        let didStartAccessing = zipURL.startAccessingSecurityScopedResource()
-        defer {
-            if didStartAccessing {
-                zipURL.stopAccessingSecurityScopedResource()
-                logger.debug(
-                    "Stopped accessing security scoped resource for URL: \(zipURL.path, privacy: .public)"
-                )
-            } else {
-                logger.warning(
-                    "Did not start accessing security scoped resource for URL: \(zipURL.path, privacy: .public)"
-                )
-            }
-        }
-        logger.debug(
-            "Started accessing security scoped resource for URL: \(zipURL.path, privacy: .public)"
-        )
-
-        // Attempt to read the images from the ZIP file
-        do {
-            let archive = try Archive(url: zipURL, accessMode: .read)
-
-            let fallbackPaths = ["thumbnails/Thumbnail.png", "Thumbnail.png"]
-
-            guard let entry = fallbackPaths.compactMap({ archive[$0] }).first
-            else {
-                return nil
-            }
-
-            var imageData = Data()
-            _ = try archive.extract(
-                entry,
-                consumer: { data in
-                    imageData.append(data)
-                }
-            )
-            // Create a direct-access data provider from the Data
-            guard let dataProvider = CGDataProvider(data: imageData as CFData)
-            else {
-                return nil
-            }
-            // Create a CGImage from the PNG data
-            guard
-                let cgImage = CGImage(
-                    pngDataProviderSource: dataProvider,
-                    decode: nil,
-                    shouldInterpolate: true,
-                    intent: .defaultIntent
-                )
-            else {
-                return nil
-            }
-            return cgImage
-
-        } catch {
-            logger.error("\(error.localizedDescription)")
-            return nil
-        }
-
-    }
-
     func providePreview(for request: QLFilePreviewRequest) async throws
         -> QLPreviewReply
     {
-        logger.critical(
+        logger.debug(
             "--- PreviewProvider: providePreview CALLED for \(request.fileURL.lastPathComponent, privacy: .public) ---"
         )
 
