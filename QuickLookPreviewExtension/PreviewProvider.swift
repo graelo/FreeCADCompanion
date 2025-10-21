@@ -1,25 +1,21 @@
-//
-//  PreviewProvider.swift
-//  Extension
-//
-//  Created by graelo.
-//
-
 import Cocoa
 import Quartz
 import UniformTypeIdentifiers
-import os.log
 import ZIPFoundation
+import os.log
 
 private let logger = Logger(
     subsystem: Bundle(for: PreviewProvider.self).bundleIdentifier
-        ?? "cc.graelo.FreeCADThumbnailPreview.fallback",
-    category: "PreviewProvider")
+        ?? "org.freecad.FreeCADCompanion.fallback",
+    category: "PreviewProvider"
+)
 
 class PreviewProvider: QLPreviewProvider, QLPreviewingController {
 
     func extractThumbnail(from zipURL: URL) -> CGImage? {
-        logger.debug("Attempting to extract thumbnail from: \(zipURL.path, privacy: .public)")
+        logger.debug(
+            "Attempting to extract thumbnail from: \(zipURL.path, privacy: .public)"
+        )
 
         let didStartAccessing = zipURL.startAccessingSecurityScopedResource()
         defer {
@@ -35,43 +31,55 @@ class PreviewProvider: QLPreviewProvider, QLPreviewingController {
             }
         }
         logger.debug(
-            "Started accessing security scoped resource for URL: \(zipURL.path, privacy: .public)")
+            "Started accessing security scoped resource for URL: \(zipURL.path, privacy: .public)"
+        )
 
         // Attempt to read the images from the ZIP file
         do {
             let archive = try Archive(url: zipURL, accessMode: .read)
-            
+
             let fallbackPaths = ["thumbnails/Thumbnail.png", "Thumbnail.png"]
-            
-            guard let entry = fallbackPaths.compactMap({ archive[$0] }).first else {
+
+            guard let entry = fallbackPaths.compactMap({ archive[$0] }).first
+            else {
                 return nil
             }
-            
+
             var imageData = Data()
-            _ = try archive.extract(entry, consumer: { data in
-                imageData.append(data)
-            })
+            _ = try archive.extract(
+                entry,
+                consumer: { data in
+                    imageData.append(data)
+                }
+            )
             // Create a direct-access data provider from the Data
-            guard let dataProvider = CGDataProvider(data: imageData as CFData) else {
+            guard let dataProvider = CGDataProvider(data: imageData as CFData)
+            else {
                 return nil
             }
             // Create a CGImage from the PNG data
-            guard let cgImage = CGImage(pngDataProviderSource: dataProvider,
-                                        decode: nil,
-                                        shouldInterpolate: true,
-                                        intent: .defaultIntent) else {
+            guard
+                let cgImage = CGImage(
+                    pngDataProviderSource: dataProvider,
+                    decode: nil,
+                    shouldInterpolate: true,
+                    intent: .defaultIntent
+                )
+            else {
                 return nil
             }
             return cgImage
-            
+
         } catch {
             logger.error("\(error.localizedDescription)")
             return nil
         }
-        
+
     }
 
-    func providePreview(for request: QLFilePreviewRequest) async throws -> QLPreviewReply {
+    func providePreview(for request: QLFilePreviewRequest) async throws
+        -> QLPreviewReply
+    {
         logger.critical(
             "--- PreviewProvider: providePreview CALLED for \(request.fileURL.lastPathComponent, privacy: .public) ---"
         )
@@ -91,10 +99,17 @@ class PreviewProvider: QLPreviewProvider, QLPreviewingController {
             )
         }
 
-        logger.info("Thumbnail extracted successfully. Image size: \(image.width)x\(image.height)")
+        logger.info(
+            "Thumbnail extracted successfully. Image size: \(image.width)x\(image.height)"
+        )
 
-        let imageSize = CGSize(width: CGFloat(image.width), height: CGFloat(image.height))
-        logger.debug("Preview contextSize will be: \(imageSize.width)x\(imageSize.height)")
+        let imageSize = CGSize(
+            width: CGFloat(image.width),
+            height: CGFloat(image.height)
+        )
+        logger.debug(
+            "Preview contextSize will be: \(imageSize.width)x\(imageSize.height)"
+        )
 
         // Ensure imageSize is valid and positive
         if imageSize.width <= 0 || imageSize.height <= 0 {
@@ -109,7 +124,9 @@ class PreviewProvider: QLPreviewProvider, QLPreviewingController {
             )
         }
 
-        let reply = QLPreviewReply(contextSize: imageSize, isBitmap: true) { context, _ in
+        let reply = QLPreviewReply(contextSize: imageSize, isBitmap: true) {
+            context,
+            _ in
             logger.info("Drawing block started. Drawing extracted thumbnail.")
 
             // Draw the extracted thumbnail image

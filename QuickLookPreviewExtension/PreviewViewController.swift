@@ -1,10 +1,3 @@
-//
-//  PreviewViewController.swift
-//  Extension
-//
-//  Created by graelo.
-//
-
 import Cocoa
 import Quartz
 

@@ -1,10 +1,3 @@
-//
-//  FreeCADThumbnailPreviewApp.swift
-//  FreeCADThumbnailPreview
-//
-//  Created by graelo.
-//
-
 import SwiftUI
 
 @main

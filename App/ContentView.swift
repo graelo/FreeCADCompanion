@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  FreeCADThumbnailPreview
-//
-//  Created by graelo.
-//
-
 import SwiftUI
 
 struct AboutView: View {
@@ -16,17 +9,19 @@ struct AboutView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 120)
                 .padding(.top, 32)
-            
+
             // App name and version
-            Text("FreeCAD Thumbnail Preview")
+            Text("FreeCAD Companion")
                 .font(.title)
                 .fontWeight(.bold)
-            
+
             // Version info (optional)
-            Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            
+            Text(
+                "Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")"
+            )
+            .font(.subheadline)
+            .foregroundColor(.secondary)
+
             // Developer info
             Text("Made with ❤️ by graelo")
                 .font(.footnote)
@@ -39,7 +34,7 @@ struct AboutView: View {
 }
 
 struct ContentView: View {
-    
+
     var body: some View {
         VStack {
             AboutView()
