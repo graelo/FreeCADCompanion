@@ -1,93 +1,74 @@
-# FreeCAD Thumbnail Preview for macOS
+# FreeCAD Companion for macOS
 
-## Overview
+Modern Quick Look extensions to preview FreeCAD `*.FCStd` files in Finder.
+This replaces the legacy `qlgenerator` and uses current macOS APIs to show the
+PNG thumbnail embedded in FreeCAD documents.
 
-This project provides a modern QuickLook extension for macOS to preview FreeCAD (`.FCStd`) files directly in Finder. It replaces the legacy FreeCAD `qlgenerator` plugin, which is no longer supported on recent macOS versions.
-
----
-
-## How It Looks
-
-When browsing your FreeCAD projects in Finder, you will see a live preview of the model's thumbnail, just like this:
-
-<img src="Resources/Example.png" alt="Example FreeCAD Thumbnail Preview" width="320" />
+- Quick Look preview (press Space) shows the embedded `Thumbnail.png`.
+- Finder thumbnails use the same embedded image.
 
 ---
 
-## Confirming Extension Installation
+## Preview examples
 
-After building and installing the app, confirm that the QuickLook extension is enabled:
+Quick Look preview:
 
-1. Open **System Settings** > **Privacy & Security** > **Extensions** > **Quick Look**.
-2. Ensure **FreeCAD Thumbnail Preview** is checked.
-3. You can also use the following command in Terminal to force QuickLook to reload its plugins:
+<img src="Resources/QuickLookPreviewExample.png" alt="QuickLook Preview" width="320" />
 
-   ```sh
-   qlmanage -r
-   ```
+Finder thumbnails:
+
+<img src="Resources/ThumbnailPreviewExample.png" alt="Thumbnail" width="520" />
+<img src="Resources/ThumbnailPreviewExample2.png" alt="Thumbnail 2" width="520" />
+
+---
+
+## Build & install
+
+1. Open the project in Xcode.
+2. Select the `FreeCAD Companion` target and build/run (⌘R) to test.
+3. To install for all users:
+   - Archive (Product > Archive), export the app, and move it to `/Applications`.
+4. Launch the app once to register the extension.
+5. If thumbnails or previews do not appear, refresh Quick Look:
+
+```FreeCADThumbnailPreview/README.md#L1-1
+qlmanage -r
+killall Finder
+```
+
+---
+
+## Enable the extension
+
+Open System Settings > Privacy & Security > Extensions > Quick Look and enable
+`FreeCAD Companion`.
 
 <img src="Resources/QuickLook%20Extensions%20List.png" alt="QuickLook Extensions List" width="400" />
 
 ---
 
-## Why?
+## How it works
 
-Apple has modernized QuickLook plugins, and the old FreeCAD `qlgenerator` is not compatible with current macOS versions. This project provides a native, secure, and future-proof solution for previewing FreeCAD files.
+- A `.FCStd` file is a ZIP archive. The extension opens the archive,
+  extracts `Thumbnail.png`, and renders that image for previews and thumbnails.
+- No model parsing — only the embedded PNG is used.
 
----
-
-## How Does It Work?
-
-When you select a `.FCStd` file in Finder, this extension:
-
-- Opens the file (which is a ZIP archive).
-- Extracts and displays the embedded `Thumbnail.png` image.
-- Shows the thumbnail as the file preview in Finder and QuickLook.
-
-**Note:**
-- For best results, configure FreeCAD to save a 256x256 or ideally a 512x512 thumbnail when saving your projects.
-- In FreeCAD, go to **Edit > Preferences > General > Document** and set the thumbnail size.
+For best results, configure FreeCAD to save a larger thumbnail (256×256 or 512×512):
+Edit > Preferences > General > Document → Thumbnail size.
 
 <img src="Resources/Thumbnail%20Settings.png" alt="FreeCAD Thumbnail Settings" width="400" />
 
 ---
 
-## Build from Source
-
-You can build and install the extension yourself—no subscription or payment required!
-
-### Steps
-
-1. Open the project in Xcode.
-2. Select the `FreeCAD Thumbnail Preview` target.
-3. Build and run (⌘R) to test locally.
-4. To install system-wide:
-    - Archive the app (**Product > Archive** in Xcode).
-    - Export and move the app to `/Applications`.
-5. Open the app once to register the extension.
-6. Confirm the extension is enabled (see above).
-7. If previews do not appear, run:
-
-   ```sh
-   qlmanage -r
-   ```
-
----
-
 ## Troubleshooting
 
-- If the preview does not show up, ensure the extension is enabled in System Settings.
-- Try running `qlmanage -r` to refresh QuickLook.
-- Make sure your `.FCStd` files contain a `Thumbnail.png` (see FreeCAD settings above).
+- Ensure `FreeCAD Companion` is enabled in System Settings.
+- Run `qlmanage -r` to reload Quick Look plugins.
+- Verify your `.FCStd` files contain `Thumbnail.png` (check FreeCAD thumbnail settings).
 
 ---
 
-## Project Goals
+## Goal & License
 
-This project aims to be integrated into FreeCAD itself, providing a seamless preview experience for all macOS users.
-
----
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
+This project aims to provide a native, future-proof preview experience and is
+intended for integration into FreeCAD. Licensed under MIT — see `LICENSE`.
