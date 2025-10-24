@@ -1,6 +1,6 @@
 import AppKit
 import QuickLookThumbnailing
-import ZIPFoundation
+// import ZIPFoundation
 import os.log
 
 private let logger = Logger(
@@ -20,7 +20,10 @@ class ThumbnailProvider: QLThumbnailProvider {
             "Providing thumbnail for: \(request.fileURL.path, privacy: .public)"
         )
 
-        guard let cgImage = extractThumbnail(from: request.fileURL) else {
+        guard
+            let cgImage = try? SwiftZIPParser.extractThumbnail(
+                from: request.fileURL, maxSize: request.maximumSize)
+        else {
             logger.warning("No valid thumbnail found; returning empty reply.")
             handler(nil, nil)
             return
@@ -34,7 +37,6 @@ class ThumbnailProvider: QLThumbnailProvider {
                 return true
             }
         )
-
 
         handler(reply, nil)
     }

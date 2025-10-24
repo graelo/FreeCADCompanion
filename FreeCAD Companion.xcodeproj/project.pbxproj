@@ -10,8 +10,6 @@
 		004BB32B2EA7652300278BFB /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004BB32A2EA7652300278BFB /* QuickLookThumbnailing.framework */; };
 		004BB32C2EA7652300278BFB /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DD5A092DF5B6EA0093C6C5 /* Quartz.framework */; };
 		004BB3332EA7652300278BFB /* Thumbnail Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 004BB3292EA7652300278BFB /* Thumbnail Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		004BB3392EA765AD00278BFB /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 004BB3382EA765AD00278BFB /* ZIPFoundation */; };
-		009E7F842DF73382006F00F0 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 009E7F832DF73382006F00F0 /* ZIPFoundation */; };
 		00DD5A0A2DF5B6EA0093C6C5 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00DD5A092DF5B6EA0093C6C5 /* Quartz.framework */; };
 		00DD5A172DF5B6EA0093C6C5 /* Preview Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 00DD5A072DF5B6EA0093C6C5 /* Preview Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -135,7 +133,6 @@
 			files = (
 				004BB32B2EA7652300278BFB /* QuickLookThumbnailing.framework in Frameworks */,
 				004BB32C2EA7652300278BFB /* Quartz.framework in Frameworks */,
-				004BB3392EA765AD00278BFB /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00DD5A0A2DF5B6EA0093C6C5 /* Quartz.framework in Frameworks */,
-				009E7F842DF73382006F00F0 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +205,6 @@
 			);
 			name = "Thumbnail Extension";
 			packageProductDependencies = (
-				004BB3382EA765AD00278BFB /* ZIPFoundation */,
 			);
 			productName = "Thumbnail Extension";
 			productReference = 004BB3292EA7652300278BFB /* Thumbnail Extension.appex */;
@@ -258,7 +253,6 @@
 			);
 			name = "Preview Extension";
 			packageProductDependencies = (
-				009E7F832DF73382006F00F0 /* ZIPFoundation */,
 			);
 			productName = Extension;
 			productReference = 00DD5A072DF5B6EA0093C6C5 /* Preview Extension.appex */;
@@ -295,7 +289,6 @@
 			mainGroup = 00DD59EB2DF5B4AE0093C6C5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				009E7F822DF73382006F00F0 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 00DD59F52DF5B4AE0093C6C5 /* Products */;
@@ -709,30 +702,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		009E7F822DF73382006F00F0 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/weichsel/ZIPFoundation.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.19;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		004BB3382EA765AD00278BFB /* ZIPFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 009E7F822DF73382006F00F0 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
-			productName = ZIPFoundation;
-		};
-		009E7F832DF73382006F00F0 /* ZIPFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 009E7F822DF73382006F00F0 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
-			productName = ZIPFoundation;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00DD59EC2DF5B4AE0093C6C5 /* Project object */;
 }

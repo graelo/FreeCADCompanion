@@ -1,7 +1,7 @@
 import Cocoa
 import Quartz
 import UniformTypeIdentifiers
-import ZIPFoundation
+// import ZIPFoundation
 import os.log
 
 private let logger = Logger(
@@ -22,7 +22,7 @@ class PreviewProvider: QLPreviewProvider, QLPreviewingController {
         let fileURL = request.fileURL
         logger.info("Received file URL: \(fileURL.path, privacy: .public)")
 
-        guard let image = extractThumbnail(from: fileURL) else {
+        guard let image = try? SwiftZIPParser.extractThumbnail(from: fileURL) else {
             let errorMessage =
                 "Failed to extract thumbnail from FreeCAD file: \(fileURL.lastPathComponent)"
             logger.error("\(errorMessage, privacy: .public)")
